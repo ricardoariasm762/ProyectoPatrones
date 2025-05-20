@@ -1,0 +1,13 @@
+<h2>Perfil del Usuario</h2>
+
+<div style="border: 1px solid #ccc; padding: 15px; border-radius: 8px;">
+  <p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
+  <p><strong>Correo:</strong> {{ usuario.correo }}</p>
+  <p><strong>Nivel:</strong> {{ usuario.nivel }}</p>
+  <p><strong>Puntos:</strong> {{ usuario.puntos }}</p>
+
+  <h4>Logros:</h4>
+  <ul>
+    <li *ngFor="let logro of usuario.logros">🏅 {{ logro }}</li>
+  </ul>
+</div>
