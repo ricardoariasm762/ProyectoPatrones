@@ -1,0 +1,8 @@
+<h2>Lista de Retos</h2>
+
+<div *ngFor="let reto of retos" style="border: 1px solid #ccc; margin: 10px; padding: 10px; border-radius: 8px;">
+  <h3>{{ reto.titulo }}</h3>
+  <p><strong>Dificultad:</strong> {{ reto.dificultad }}</p>
+  <p>{{ reto.descripcion }}</p>
+  <button>Intentar reto</button>
+</div>
