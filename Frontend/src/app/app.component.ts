@@ -1,18 +1,17 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
-  template: `
-    <h1>App Angular + Spring Boot</h1>
-    <button (click)="ping()">Probar API</button>
-  `
+  imports: [CommonModule, RouterModule], // 👈 IMPORTANTE
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  private http = inject(HttpClient);
+  constructor(private http: HttpClient) {}
 
   ping() {
     this.http.get('/api/ping', { responseType: 'text' }).subscribe({
